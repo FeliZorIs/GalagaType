@@ -5,16 +5,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
+    public float speed;
 
-    public int speed;
-    float Horizontal;
-    float Vertical;
-    Vector2 direction;
+    public GameObject sprite;
+
+    public GameObject Dpad_sr;
+    public Sprite[] Dpad_sprites;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        sprite = GameObject.Find("Player/Sprite");
     }
 
     // Update is called once per frame
@@ -25,10 +26,48 @@ public class Player : MonoBehaviour
 
     void movement()
     {
-        Horizontal = Input.GetAxisRaw("Horizontal");
-        Vertical = Input.GetAxisRaw("Vertical");
-        direction = new Vector2(Horizontal, Vertical);
+        sprite.transform.eulerAngles = new Vector3(0, 0, 0);
 
-        rb.MovePosition(direction * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.W))
+        {
+            move_up();
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            move_down();
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            sprite.transform.eulerAngles = new Vector3(0, 0, 45);
+            move_left();
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            sprite.transform.eulerAngles = new Vector3(0, 0, -45);
+            move_right();
+        }
+    }
+
+    public void move_up()
+    {
+        this.transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+
+    public void move_down()
+    {
+        this.transform.Translate(Vector2.down * speed * Time.deltaTime);
+    }
+
+    public void move_left()
+    {
+        this.transform.Translate(Vector2.left * speed * Time.deltaTime);
+    }
+
+    public void move_right()
+    {
+        this.transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 }
