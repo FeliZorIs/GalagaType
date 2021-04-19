@@ -388,6 +388,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -663,6 +675,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1202998760}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: move_UPLEFT
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -984,6 +1008,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -1234,6 +1270,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -1392,6 +1440,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1202998760}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: move_DOWN
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1638,6 +1698,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1202998760}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: move_RIGHT
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2406,6 +2478,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: vibrate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -2720,9 +2804,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 50
-      minScalar: 5
+      minScalar: 75
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3418,7 +3502,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7889,12 +7973,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1202998760}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
-          m_MethodName: move_UP
+          m_MethodName: vibrate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202998760}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: MOVE
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -7905,12 +8001,12 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1202998760}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
-          m_MethodName: move_UP
-          m_Mode: 1
+          m_MethodName: MOVE
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -7935,6 +8031,11 @@ PrefabInstance:
     - target: {fileID: 5420475059850234436, guid: fbc30c06bc93082429c6c179e6cafa57,
         type: 3}
       propertyPath: turn_angle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420475059850234436, guid: fbc30c06bc93082429c6c179e6cafa57,
+        type: 3}
+      propertyPath: turn_speed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5420475059850234436, guid: fbc30c06bc93082429c6c179e6cafa57,
