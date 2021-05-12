@@ -77,11 +77,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3080}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3722}
+      Script: {instanceID: 3724}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -235,7 +235,7 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: a1b272679bd7a828e7a36155fa5fddbe
+      Hash: 3645a4443b80f30b6c2f3791ccd186f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -632,4 +632,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_00_15.apk
+  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_00_17.apk
