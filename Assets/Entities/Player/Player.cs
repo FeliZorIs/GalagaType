@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Image Dpad_sprite;
+    Image blue_button_sprite;
+    Image red_button_sprite;
     Vector3 lastFramePosition;
 
     public float speed;
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour
          upLeft, upRight, downLeft, downRight;
 
     bool moving;
+    bool shot_blue, shot_red;
+
+    public GameObject button_blue;
+    public GameObject button_red;
+    public Sprite[] Buttons; 
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +36,21 @@ public class Player : MonoBehaviour
         sprite = GameObject.Find("Player/Sprite");
         rb = GetComponent<Rigidbody2D>();
         Dpad_sprite = Dpad_sr.gameObject.GetComponent<Image>();
-        //neutral = 0
-        //up = 1        upleft = 5
-        //down = 2      upright = 6
-        //left = 3      downleft = 7
-        //right = 4     downright = 8
+        //neutral   = 0
+        //up        = 1     upleft      = 5
+        //down      = 2     upright     = 6
+        //left      = 3     downleft    = 7
+        //right     = 4     downright   = 8
+
+        blue_button_sprite = button_blue.gameObject.GetComponent<Image>();
+        red_button_sprite = button_red.gameObject.GetComponent<Image>();
+        //Blue Button_UP    = 0     Red Button_UP   = 2
+        //Blut Button_DOWN  = 1     Red Button_DOWN = 3
 
         up = false;
         moving = false;
+        shot_blue = false;
+        shot_red = false;
         lastFramePosition = transform.position;
     }
 
@@ -47,17 +61,20 @@ public class Player : MonoBehaviour
 
         //rotates plane when you move left or right
         var delta = transform.position - lastFramePosition;
-        if (delta.x < 0 && sprite.transform.rotation.eulerAngles.z < 15) //to the left
+        if (left || upLeft || downLeft) //to the left
         {
-            sprite.transform.Rotate(new Vector3(0, 0, turn_speed * Time.deltaTime));
+            //sprite.transform.Rotate(new Vector3(0, 0, turn_speed * Time.deltaTime));
+            sprite.transform.eulerAngles = new Vector3(0, 0, 15);
         }
-        if(delta.x > 0 && sprite.transform.rotation.eulerAngles.z > -15) //to the right
+        if(right || upRight || downRight) //to the right
         {
-            sprite.transform.Rotate(new Vector3(0, 0, -turn_speed * Time.deltaTime));
+            //sprite.transform.Rotate(new Vector3(0, 0, -turn_speed * Time.deltaTime));
+            sprite.transform.eulerAngles = new Vector3(0, 0, -15);
         }
         lastFramePosition = transform.position;
     }
     
+    //dictates moving with the D-pad
     public void movement_buttons()
     {
         if (moving == false)
@@ -123,12 +140,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void shooting()
+    {
+        if (shot_blue && !shot_red) //blue shots
+        {
+            
+            Debug.Log("PEW_blue");
+        }
+
+        else if (shot_red && !shot_blue) //red shots
+        {
+            Debug.Log("PEW_red");
+        }
+    }
+
     //========================= Called By Buttons (Canvas > ButtonArea > D-pad > buttons...) =============================
 
-    //up    = 1         upLeft      = 5
-    //down  = 2         upRight     = 6
-    //left  = 3         downLeft    = 7
-    //right = 4         downRight   = 8
+    //up    = 1         upLeft      = 5         Blue Button_UP  = 0
+    //down  = 2         upRight     = 6         Blue Button_Down= 1
+    //left  = 3         downLeft    = 7         Red Button_UP   = 2
+    //right = 4         downRight   = 8         Red Button_Down = 3
     public void MOVE(int direction)
     {
         switch (direction) 
@@ -182,6 +213,35 @@ public class Player : MonoBehaviour
 
         return direction;
     }
+
+    //allows to shoot the blue bullets
+    public void shoot_blue()
+    {
+        if (shot_blue == false)
+        {
+            shot_blue = true;
+            blue_button_sprite.sprite = Buttons[1];
+        }
+        else
+        {
+            shot_blue = false;
+            blue_button_sprite.sprite = Buttons[0];
+        }
+    }
+
+    public void shoot_red()
+    {
+        if (shot_red == false)
+        {
+            shot_red = true;
+        }
+        else
+        {
+            shot_red = false;
+        }
+    }
+
+    //================================================ Miscellaneous ===========================================
 
     //so the phone vibrates
     public void vibrate()
