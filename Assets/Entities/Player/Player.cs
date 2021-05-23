@@ -7,15 +7,17 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Image Dpad_sprite;
-    Image blue_button_sprite;
-    Image red_button_sprite;
+    SpriteRenderer blue_button_sprite;
+    SpriteRenderer red_button_sprite;
+    GameObject sprite;
+    [SerializeField]GameObject MuzzleFlash_blue;
+    [SerializeField]GameObject MuzzleFlash_red;
     Vector3 lastFramePosition;
 
     public float speed;
     public float turn_angle;
     public float turn_speed;
 
-    public GameObject sprite;
 
     public GameObject Dpad_sr;
     public Sprite[] Dpad_sprites;
@@ -34,6 +36,10 @@ public class Player : MonoBehaviour
     void Start()
     {
         sprite = GameObject.Find("Player/Sprite");
+        MuzzleFlash_blue = GameObject.Find("Player/Sprite/MuzzleFlash_Blue");
+        MuzzleFlash_red = GameObject.Find("Player/Sprite/MuzzleFlash_Red");
+        MuzzleFlash_blue.SetActive(false);
+        MuzzleFlash_red.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         Dpad_sprite = Dpad_sr.gameObject.GetComponent<Image>();
         //neutral   = 0
@@ -42,8 +48,8 @@ public class Player : MonoBehaviour
         //left      = 3     downleft    = 7
         //right     = 4     downright   = 8
 
-        blue_button_sprite = button_blue.gameObject.GetComponent<Image>();
-        red_button_sprite = button_red.gameObject.GetComponent<Image>();
+        blue_button_sprite = button_blue.gameObject.GetComponent<SpriteRenderer>();
+        red_button_sprite = button_red.gameObject.GetComponent<SpriteRenderer>();
         //Blue Button_UP    = 0     Red Button_UP   = 2
         //Blut Button_DOWN  = 1     Red Button_DOWN = 3
 
@@ -72,6 +78,8 @@ public class Player : MonoBehaviour
             sprite.transform.eulerAngles = new Vector3(0, 0, -15);
         }
         lastFramePosition = transform.position;
+
+        shooting();
     }
     
     //dictates moving with the D-pad
@@ -221,11 +229,13 @@ public class Player : MonoBehaviour
         {
             shot_blue = true;
             blue_button_sprite.sprite = Buttons[1];
+            MuzzleFlash_blue.SetActive(true);
         }
         else
         {
             shot_blue = false;
             blue_button_sprite.sprite = Buttons[0];
+            MuzzleFlash_blue.SetActive(false);
         }
     }
 
@@ -234,10 +244,14 @@ public class Player : MonoBehaviour
         if (shot_red == false)
         {
             shot_red = true;
+            red_button_sprite.sprite = Buttons[3];
+            MuzzleFlash_red.SetActive(true);
         }
         else
         {
             shot_red = false;
+            red_button_sprite.sprite = Buttons[2];
+            MuzzleFlash_red.SetActive(false);
         }
     }
 

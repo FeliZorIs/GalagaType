@@ -24,6 +24,14 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -58,30 +66,36 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 2080}
+      Script: {instanceID: 2102}
     - Class: 114
-      Script: {instanceID: 2234}
+      Script: {instanceID: 2256}
     - Class: 114
-      Script: {instanceID: 2304}
+      Script: {instanceID: 2326}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 2474}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2768}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 2980}
+      Script: {instanceID: 3002}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 3104}
     - Class: 114
-      Script: {instanceID: 3724}
+      Script: {instanceID: 3746}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -235,7 +249,7 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 3645a4443b80f30b6c2f3791ccd186f6
+      Hash: 23904fea150d6c7905d6f6717e11dffb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -632,4 +646,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_00_17.apk
+  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_00_18.apk
