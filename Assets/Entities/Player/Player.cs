@@ -9,9 +9,14 @@ public class Player : MonoBehaviour
     Image Dpad_sprite;
     SpriteRenderer blue_button_sprite;
     SpriteRenderer red_button_sprite;
+
     GameObject sprite;
-    [SerializeField]GameObject MuzzleFlash_blue;
-    [SerializeField]GameObject MuzzleFlash_red;
+
+    GameObject MuzzleFlash_blue;
+    GameObject MuzzleFlash_red;
+    [SerializeField] Transform bullet_pos_L;
+    [SerializeField] Transform bullet_pos_R;
+
     Vector3 lastFramePosition;
 
     public float speed;
@@ -40,6 +45,10 @@ public class Player : MonoBehaviour
         MuzzleFlash_red = GameObject.Find("Player/Sprite/MuzzleFlash_Red");
         MuzzleFlash_blue.SetActive(false);
         MuzzleFlash_red.SetActive(false);
+
+        bullet_pos_L = GameObject.Find("Player/Sprite/Bullet_Spawn_L").transform;
+        bullet_pos_R = GameObject.Find("Player/Sprite/Bullet_Spawn_R").transform;
+
         rb = GetComponent<Rigidbody2D>();
         Dpad_sprite = Dpad_sr.gameObject.GetComponent<Image>();
         //neutral   = 0
