@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Boundry
+    - Bullet_Behaviour
     - Player
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -11,7 +13,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -27,10 +28,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -77,25 +76,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1494}
     - Class: 114
-      Script: {instanceID: 2102}
+      Script: {instanceID: 2080}
     - Class: 114
-      Script: {instanceID: 2256}
+      Script: {instanceID: 2234}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2304}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 3002}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3746}
+      Script: {instanceID: 3346}
+    - Class: 114
+      Script: {instanceID: 3726}
+    - Class: 114
+      Script: {instanceID: 3800}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -249,7 +252,7 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 23904fea150d6c7905d6f6717e11dffb
+      Hash: 7eda00e9737200d839cb3eda5a423aa4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -405,6 +408,12 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bullet_Behaviour
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -501,6 +510,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: a4444e9e0d7eaac63b5531ec6f3d6d70
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Boundry
+  - hash:
+      serializedVersion: 2
       Hash: 0edeba255bdbade25edc357f1412ba38
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
@@ -553,6 +568,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 4b5aac457205bfab3b90eac215bcce55
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Size
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -646,4 +667,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_00_18.apk
+  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_00_19.apk

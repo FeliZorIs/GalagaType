@@ -14,15 +14,16 @@ public class Player : MonoBehaviour
 
     GameObject MuzzleFlash_blue;
     GameObject MuzzleFlash_red;
-    [SerializeField] Transform bullet_pos_L;
-    [SerializeField] Transform bullet_pos_R;
+    [SerializeField]Transform bullet_pos_L;
+    [SerializeField]Transform bullet_pos_R;
+    public GameObject bullet_blue;
+    public GameObject bullet_red;
 
     Vector3 lastFramePosition;
 
     public float speed;
     public float turn_angle;
     public float turn_speed;
-
 
     public GameObject Dpad_sr;
     public Sprite[] Dpad_sprites;
@@ -35,7 +36,9 @@ public class Player : MonoBehaviour
 
     public GameObject button_blue;
     public GameObject button_red;
-    public Sprite[] Buttons; 
+    public Sprite[] Buttons;
+
+    public float time_delay;
 
     // Start is called before the first frame update
     void Start()
@@ -157,17 +160,41 @@ public class Player : MonoBehaviour
         }
     }
 
+    float timer = 0;
+    bool Switch = false;
     public void shooting()
     {
+        timer += Time.deltaTime;
         if (shot_blue && !shot_red) //blue shots
         {
-            
-            Debug.Log("PEW_blue");
+            if (timer >= time_delay && Switch == false)
+            {
+                Instantiate(bullet_blue, bullet_pos_L.position, Quaternion.identity);
+                Switch = true;
+                timer = 0;
+            }
+            if (timer >= time_delay && Switch == true)
+            {
+                Instantiate(bullet_blue, bullet_pos_R.position, Quaternion.identity);
+                Switch = false;
+                timer = 0;
+            }
         }
 
         else if (shot_red && !shot_blue) //red shots
         {
-            Debug.Log("PEW_red");
+            if (timer >= time_delay && Switch == false)
+            {
+                Instantiate(bullet_red, bullet_pos_L.position, Quaternion.identity);
+                Switch = true;
+                timer = 0;
+            }
+            if (timer >= time_delay && Switch == true)
+            {
+                Instantiate(bullet_red, bullet_pos_R.position, Quaternion.identity);
+                Switch = false;
+                timer = 0;
+            };
         }
     }
 
@@ -248,6 +275,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //allows to shoot the red bullets
     public void shoot_red()
     {
         if (shot_red == false)
@@ -278,14 +306,12 @@ public class Player : MonoBehaviour
         float temp_speed = 7.5f * turn_speed;
         if (sprite.transform.rotation.z >= 0.01f)//from the left
         {
-            sprite.transform.Rotate(new Vector3(0, 0, -temp_speed * Time.deltaTime));
+            sprite.transform.Rotate(new Vector3(0, 0, -temp_speed/2 * Time.deltaTime));
         }
 
         if (sprite.transform.rotation.z <= -0.01f)//from the right
         {
-            sprite.transform.Rotate(new Vector3(0, 0, temp_speed * Time.deltaTime));
+            sprite.transform.Rotate(new Vector3(0, 0, temp_speed/2 * Time.deltaTime));
         }
-        else
-        { }
     }
 }

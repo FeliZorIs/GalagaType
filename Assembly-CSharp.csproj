@@ -58,6 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\Entities\Player\Player.cs" />
     <Compile Include="Assets\Vibration.cs" />
+    <Compile Include="Assets\Entities\Bullets\Bullet_Behaviour.cs" />
+    <Compile Include="Assets\Entities\Size.cs" />
+    <Compile Include="Assets\Boundry.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
