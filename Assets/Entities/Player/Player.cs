@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
 
     public float time_delay;
 
+    SpriteRenderer sr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,13 +72,15 @@ public class Player : MonoBehaviour
         shot_blue = false;
         shot_red = false;
         lastFramePosition = transform.position;
+
+        sr = sprite.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         movement_buttons();
-
+    
         //rotates plane when you move left or right
         var delta = transform.position - lastFramePosition;
         if (left || upLeft || downLeft) //to the left
@@ -90,7 +94,7 @@ public class Player : MonoBehaviour
             sprite.transform.eulerAngles = new Vector3(0, 0, -15);
         }
         lastFramePosition = transform.position;
-
+    
         shooting();
     }
     

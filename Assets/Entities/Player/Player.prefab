@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4241793403477192316, guid: 8a68f881351c49c4ea30cae1f7a1e6fc,
+  m_Sprite: {fileID: -7883011642294346448, guid: 8fd1a26e38ff15b4ab09930f9b060db1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 5420475059850234436}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 7187812144209540649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.09758079, y: -0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 7935933013663322221}
   m_Father: {fileID: 0}
@@ -270,23 +270,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.23757175, y: -0.07843989}
-      - {x: 0.14280921, y: -0.016032904}
-      - {x: 0.029953957, y: 0.48166284}
-      - {x: -0.026593737, y: 0.47895065}
-      - {x: -0.13260853, y: -0.009960517}
-      - {x: -0.22700652, y: -0.076468796}
-      - {x: -0.31662828, y: -0.05553949}
-      - {x: -0.48179692, y: 0.053210214}
-      - {x: -0.44911683, y: -0.12994409}
+    - - {x: 0.29679358, y: 0.00010528523}
+      - {x: 0.23410746, y: -0.000038794533}
+      - {x: 0.1406774, y: -0.000009927593}
+      - {x: 0.02748803, y: 0.48453972}
+      - {x: -0.027621206, y: 0.48449898}
+      - {x: -0.13141547, y: 0.00007763284}
+      - {x: -0.21849336, y: 0.00016660137}
+      - {x: -0.31124315, y: 0.00019656683}
+      - {x: -0.4058548, y: 0.00030098436}
+      - {x: -0.40593928, y: -0.17164397}
+      - {x: -0.25982046, y: -0.28842482}
       - {x: -0.2484161, y: -0.32646877}
-      - {x: -0.18826807, y: -0.47895062}
-      - {x: -0.0011192709, y: -0.35094175}
-      - {x: 0.1821957, y: -0.48708713}
+      - {x: -0.1870285, y: -0.48390877}
+      - {x: -0.078081354, y: -0.48396575}
+      - {x: -0.00021314621, y: -0.35891566}
+      - {x: 0.078117244, y: -0.48426357}
+      - {x: 0.1879756, y: -0.4840816}
       - {x: 0.22404708, y: -0.35455784}
-      - {x: 0.45454112, y: -0.12706414}
-      - {x: 0.4817742, y: 0.049059212}
-      - {x: 0.31523263, y: -0.05396329}
+      - {x: 0.25644022, y: -0.3075561}
+      - {x: 0.40599298, y: -0.17320883}
+      - {x: 0.40571734, y: 0.00026175566}
 --- !u!50 &7187812144209540646
 Rigidbody2D:
   serializedVersion: 4
@@ -307,7 +311,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5420475059850234436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,16 +324,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771b25658ee07194888dab220147a6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MuzzleFlash_blue: {fileID: 0}
-  MuzzleFlash_red: {fileID: 0}
-  speed: 0
-  turn_angle: 0
-  turn_speed: 0
+  bullet_pos_L: {fileID: 0}
+  bullet_pos_R: {fileID: 0}
+  bullet_blue: {fileID: 6797787878905453322, guid: f74e82d8323717e4d989f310c8789e56,
+    type: 3}
+  bullet_red: {fileID: 3270750169322819811, guid: c08e6d3b0f6542c4e886b56ebf8be161,
+    type: 3}
+  speed: 2.5
+  turn_angle: 15
+  turn_speed: 30
   Dpad_sr: {fileID: 0}
-  Dpad_sprites: []
+  Dpad_sprites:
+  - {fileID: -6533515740185949965, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: -6265982410705937576, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: -1366786852485765592, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: 2972640346945781383, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: 1470943282107093703, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: -6044403485394468322, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: 7837468672539324934, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: 1358366252302852412, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
+  - {fileID: -923546896899125985, guid: cabce764ebdd32741bc71809d2a649c3, type: 3}
   button_blue: {fileID: 0}
   button_red: {fileID: 0}
-  Buttons: []
+  Buttons:
+  - {fileID: -2130625015884079710, guid: fec45ca77b9e84b4b9b3f06f60d74067, type: 3}
+  - {fileID: -6191063034337433811, guid: fec45ca77b9e84b4b9b3f06f60d74067, type: 3}
+  - {fileID: -6068725336233702336, guid: 88a89a7d2dfe3fa43b3abb0136fa684a, type: 3}
+  - {fileID: 8675160692565040855, guid: 88a89a7d2dfe3fa43b3abb0136fa684a, type: 3}
+  time_delay: 0.1
 --- !u!1001 &761826861717439405
 PrefabInstance:
   m_ObjectHideFlags: 0

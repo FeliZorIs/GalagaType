@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet_Behaviour : MonoBehaviour
 {
+    public GameObject bulletImpact;
     public float speed;
     Vector2 direction;
 
@@ -23,6 +24,15 @@ public class Bullet_Behaviour : MonoBehaviour
 
         if (this.transform.position.y >= screenBounds.y)
         {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            Instantiate(bulletImpact, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

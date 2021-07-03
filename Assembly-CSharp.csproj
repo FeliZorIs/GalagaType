@@ -59,8 +59,11 @@
     <Compile Include="Assets\Entities\Player\Player.cs" />
     <Compile Include="Assets\Vibration.cs" />
     <Compile Include="Assets\Entities\Bullets\Bullet_Behaviour.cs" />
-    <Compile Include="Assets\Entities\Size.cs" />
+    <Compile Include="Assets\FX\Bullet_Impact\BulletImpact.cs" />
+    <Compile Include="Assets\Entities\Enemies\Enemy.cs" />
     <Compile Include="Assets\Boundry.cs" />
+    <Compile Include="Assets\Entities\Size.cs" />
+    <Compile Include="Assets\Entities\Enemies\Enemy 3\Enemy_Neutral.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

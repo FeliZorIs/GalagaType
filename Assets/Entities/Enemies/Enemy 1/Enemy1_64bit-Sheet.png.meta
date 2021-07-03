@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: -6723802176601495193
     second: Enemy1_64bit-Sheet_3
+  - first:
+      213: -9219804598420383818
+    second: Enemy1_64bit-Sheet_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -206,6 +209,27 @@ TextureImporter:
       bones: []
       spriteID: 7696bab6b8140b2a0800000000000000
       internalID: -6723802176601495193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_64bit-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7d3acf09cac0080800000000000000
+      internalID: -9219804598420383818
       vertices: []
       indices: 
       edges: []

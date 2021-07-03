@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3270750169322819810}
   m_Layer: 0
   m_Name: PlayerBullet_Red
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,4 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dec26134569ed47b993fcb6de1a7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletImpact: {fileID: 4316141578739779531, guid: ebf9466756fbd314d853433c344b8978,
+    type: 3}
   speed: 10

@@ -18,8 +18,6 @@ public class Boundry : MonoBehaviour
     {
         edge = this.GetComponent<EdgeCollider2D>();
         findBoundries();
-        Debug.Log("Width: " + width + "\n" +
-            "Height: " + height);
     }
 
     // Update is called once per frame
