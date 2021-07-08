@@ -4,7 +4,10 @@ ScriptsOnlyBuild:
     - Boundry
     - BulletImpact
     - Bullet_Behaviour
+    - CameraShake
+    - Disappear
     - Enemy
+    - EnemySpawner
     - Enemy_Neutral
     - Player
     Unity.2D.Animation.Editor.dll:
@@ -32,10 +35,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -106,13 +107,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3728}
+      Script: {instanceID: 3646}
     - Class: 114
-      Script: {instanceID: 3754}
+      Script: {instanceID: 3730}
     - Class: 114
-      Script: {instanceID: 3804}
+      Script: {instanceID: 3756}
     - Class: 114
-      Script: {instanceID: 20916}
+      Script: {instanceID: 3806}
+    - Class: 114
+      Script: {instanceID: 4148}
+    - Class: 114
+      Script: {instanceID: 4516}
+    - Class: 114
+      Script: {instanceID: 20598}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -494,6 +501,12 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
+      Hash: e84c94cffc83870a490fe88f1bc2f037
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraShake
+  - hash:
+      serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -596,6 +609,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 0ed2fda0efc94e5475bfde1a83c65a2f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemySpawner
+  - hash:
+      serializedVersion: 2
       Hash: 4b5aac457205bfab3b90eac215bcce55
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -650,6 +669,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy_Neutral
+  - hash:
+      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -692,11 +717,11 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4b6a21bdbab6efdb99e084e759b7971b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Enemy_Neutral
+    className: Disappear
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_01_03.apk
+  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_01_06.apk

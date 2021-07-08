@@ -60,10 +60,15 @@
     <Compile Include="Assets\Vibration.cs" />
     <Compile Include="Assets\Entities\Bullets\Bullet_Behaviour.cs" />
     <Compile Include="Assets\FX\Bullet_Impact\BulletImpact.cs" />
+    <Compile Include="Assets\CameraShake.cs" />
     <Compile Include="Assets\Entities\Enemies\Enemy.cs" />
     <Compile Include="Assets\Boundry.cs" />
+    <Compile Include="Assets\EnemySpawner.cs" />
     <Compile Include="Assets\Entities\Size.cs" />
-    <Compile Include="Assets\Entities\Enemies\Enemy 3\Enemy_Neutral.cs" />
+    <Compile Include="Assets\Entities\Enemies\Enemy Neutral\Enemy_Neutral.cs" />
+    <Compile Include="Assets\FX\Explosion\Disappear.cs" />
+    <Compile Include="Assets\Entities\Enemies\Enemy Red\Enemy_Red.cs" />
+    <Compile Include="Assets\Entities\Enemies\Enemy Blue\Enemy_Blue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

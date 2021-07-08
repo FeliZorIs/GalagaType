@@ -8,14 +8,7 @@ public class Enemy : MonoBehaviour
     public float health;
     public float score;
 
-    public GameObject edge;
-    public GameObject box;
     public GameObject particle_effect;
-
-    EdgeCollider2D edge_c;
-    BoxCollider2D box_c;
-
-    Vector2 screenBounds;
 
     Camera cam;
 
@@ -25,14 +18,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        screenBounds = Camera.main.ScreenToViewportPoint(new Vector3(Screen.width,Screen.height));
         cam = Camera.main;
-
-        edge_c = edge.GetComponent<EdgeCollider2D>();
-        box_c = box.GetComponent<BoxCollider2D>();
-
-        Physics2D.IgnoreCollision(this.GetComponent<PolygonCollider2D>(), edge_c, true);
-        Physics2D.IgnoreCollision(this.GetComponent<PolygonCollider2D>(), box_c, true);
         findBoundries();
     }
 
@@ -43,14 +29,13 @@ public class Enemy : MonoBehaviour
 
         if (this.transform.position.y <= -height/2)
         {
-            Debug.Log(transform.position.y);
-            Debug.Log(-height);
             Destroy(this.gameObject);
         }
 
         if (health <= 0)
         {
-            playParticleEffect();
+            Instantiate(particle_effect, this.transform.position, Quaternion.identity);
+            cam.GetComponent<CameraShake>().shouldShake = true;
             Destroy(this.gameObject);
         }
     }
@@ -61,8 +46,11 @@ public class Enemy : MonoBehaviour
         height = 1 / (cam.WorldToViewportPoint(new Vector3(1, 1, 0)).y - .5f);
     }
 
-    void playParticleEffect()
-    { 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "GameScreen")
+        {
+            Physics2D.IgnoreCollision(this.GetComponent<PolygonCollider2D>(), collision.collider, true);
+        }
     }
 }

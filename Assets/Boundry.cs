@@ -18,13 +18,13 @@ public class Boundry : MonoBehaviour
     {
         edge = this.GetComponent<EdgeCollider2D>();
         findBoundries();
+        setBounds();
     }
 
     // Update is called once per frame
     void Update()
     {
         findBoundries();
-        setBounds();
     }
 
     void setBounds()
