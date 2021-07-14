@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6797787878905453326}
   - component: {fileID: 6000213712675425853}
   - component: {fileID: 5981023898450287425}
-  - component: {fileID: 1966586035871891274}
   m_Layer: 0
   m_Name: PlayerBullet_Blue
   m_TagString: blue_bullet
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5620515705703477870, guid: 0e8f2b0252c46b04fbadc1916db439c2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletImpact: {fileID: 4316141578739779531, guid: ebf9466756fbd314d853433c344b8978,
     type: 3}
-  speed: 10
+  speed: 5
 --- !u!61 &6000213712675425853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,20 +167,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &1966586035871891274
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6797787878905453322}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.088862404}
-  serializedVersion: 2
-  m_Radius: 0.028325096
+  m_Constraints: 0

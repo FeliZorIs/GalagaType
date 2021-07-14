@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -135,10 +135,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.23852241, y: -0.03176497}
-      - {x: 0.19479519, y: 0.2949436}
-      - {x: 0.11233405, y: 0.48383874}
-      - {x: -0.11311995, y: 0.48379576}
-      - {x: -0.20159322, y: 0.29066244}
+      - {x: 0.22586265, y: 0.07751155}
+      - {x: 0.10931857, y: 0.48576358}
+      - {x: -0.11106771, y: 0.48424882}
+      - {x: -0.18034737, y: 0.26910204}
+      - {x: -0.22544807, y: 0.08681166}
       - {x: -0.23200922, y: -0.025037449}
       - {x: -0.4690734, y: -0.24994439}
       - {x: -0.4691241, y: -0.39024577}
@@ -162,8 +163,11 @@ MonoBehaviour:
   speed: 1
   health: 5
   score: 150
+  bulletImpact: {fileID: 4316141578739779531, guid: ebf9466756fbd314d853433c344b8978,
+    type: 3}
   particle_effect: {fileID: 3612387377353032088, guid: 89e2c315f8c6cc848a128e42d5e88084,
     type: 3}
+  sparks: {fileID: 3792569175864055717, guid: 5f76b22ef7a1e744ca071f251bbd3d25, type: 3}
 --- !u!114 &-8382958442033247171
 MonoBehaviour:
   m_ObjectHideFlags: 0

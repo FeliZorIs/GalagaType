@@ -56,19 +56,19 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Entities\Enemies\Enemy Red\Enemy_Red.cs" />
     <Compile Include="Assets\Entities\Player\Player.cs" />
     <Compile Include="Assets\Vibration.cs" />
+    <Compile Include="Assets\Entities\Enemies\Enemy Blue\Enemy_Blue.cs" />
     <Compile Include="Assets\Entities\Bullets\Bullet_Behaviour.cs" />
     <Compile Include="Assets\FX\Bullet_Impact\BulletImpact.cs" />
+    <Compile Include="Assets\FX\Disappear.cs" />
     <Compile Include="Assets\CameraShake.cs" />
     <Compile Include="Assets\Entities\Enemies\Enemy.cs" />
     <Compile Include="Assets\Boundry.cs" />
     <Compile Include="Assets\EnemySpawner.cs" />
     <Compile Include="Assets\Entities\Size.cs" />
     <Compile Include="Assets\Entities\Enemies\Enemy Neutral\Enemy_Neutral.cs" />
-    <Compile Include="Assets\FX\Explosion\Disappear.cs" />
-    <Compile Include="Assets\Entities\Enemies\Enemy Red\Enemy_Red.cs" />
-    <Compile Include="Assets\Entities\Enemies\Enemy Blue\Enemy_Blue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

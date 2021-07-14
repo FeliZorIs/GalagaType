@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -166,10 +166,11 @@ MonoBehaviour:
   speed: 1
   health: 5
   score: 100
-  edge: {fileID: 0}
-  box: {fileID: 0}
+  bulletImpact: {fileID: 4316141578739779531, guid: ebf9466756fbd314d853433c344b8978,
+    type: 3}
   particle_effect: {fileID: 3612387377353032088, guid: 89e2c315f8c6cc848a128e42d5e88084,
     type: 3}
+  sparks: {fileID: 3792569175864055717, guid: 5f76b22ef7a1e744ca071f251bbd3d25, type: 3}
 --- !u!95 &5676760470538964757
 Animator:
   serializedVersion: 3

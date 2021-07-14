@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     public float health;
     public float score;
 
+    public GameObject bulletImpact;
     public GameObject particle_effect;
+    public GameObject sparks;
 
     Camera cam;
 
@@ -34,9 +36,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Instantiate(particle_effect, this.transform.position, Quaternion.identity);
-            cam.GetComponent<CameraShake>().shouldShake = true;
-            Destroy(this.gameObject);
+            death();
         }
     }
 
@@ -46,11 +46,28 @@ public class Enemy : MonoBehaviour
         height = 1 / (cam.WorldToViewportPoint(new Vector3(1, 1, 0)).y - .5f);
     }
 
+    void death()
+    {
+        Instantiate(particle_effect, this.transform.position, Quaternion.identity);
+        cam.GetComponent<CameraShake>().shouldShake = true;
+        Destroy(this.gameObject);
+    }
+
+    public void impact(GameObject PE, Vector3 position)
+    {
+        Instantiate(PE, position, Quaternion.identity);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "GameScreen")
         {
             Physics2D.IgnoreCollision(this.GetComponent<PolygonCollider2D>(), collision.collider, true);
+        }
+
+        if (collision.transform.tag == "Player")
+        {
+            death();
         }
     }
 }

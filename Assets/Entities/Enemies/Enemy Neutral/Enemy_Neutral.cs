@@ -21,6 +21,9 @@ public class Enemy_Neutral : MonoBehaviour
     {
         if (collision.transform.tag == "red_bullet" || collision.transform.tag == "blue_bullet")
         {
+            enemy.impact(enemy.bulletImpact, collision.transform.position);
+            Destroy(collision.gameObject);
+
             enemy.health -= 1;
             anim.SetTrigger("hit");
         }
