@@ -5,41 +5,57 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    //rigidbody
     Rigidbody2D rb;
+
+    //Canvas Buttons
     Image Dpad_sprite;
     SpriteRenderer blue_button_sprite;
     SpriteRenderer red_button_sprite;
 
+    //player's sprite
     GameObject sprite;
+    public Sprite sprite_normal;
+    public Sprite sprite_hurt;
 
+    //shooting position, FX, and bullets
     GameObject MuzzleFlash_blue;
     GameObject MuzzleFlash_red;
-    [SerializeField]Transform bullet_pos_L;
-    [SerializeField]Transform bullet_pos_R;
+    Transform bullet_pos_L;
+    Transform bullet_pos_R;
     public GameObject bullet_blue;
     public GameObject bullet_red;
 
-    Vector3 lastFramePosition;
+    //Health
+    public GameObject healthBar;
+    public float health;
+    public Sprite[] healthStatus;
+    public GameObject explosion;
+    bool dead;
 
+    //moving and turning plane
+    Vector3 lastFramePosition;
     public float speed;
     public float turn_angle;
     public float turn_speed;
+    bool moving;
 
-    public GameObject Dpad_sr;
+    //D-pad Functionality
     public Sprite[] Dpad_sprites;
-
+    public GameObject Dpad_sr;
     bool up, down, left, right,
          upLeft, upRight, downLeft, downRight;
 
-    bool moving;
+    //Button Functionality
     bool shot_blue, shot_red;
-
     public GameObject button_blue;
     public GameObject button_red;
     public Sprite[] Buttons;
 
-    public float time_delay;
+    //Game Over
+    public GameObject GameOver;
 
+    public float time_delay;
     SpriteRenderer sr;
 
     // Start is called before the first frame update
@@ -50,6 +66,9 @@ public class Player : MonoBehaviour
         MuzzleFlash_red = GameObject.Find("Player/Sprite/MuzzleFlash_Red");
         MuzzleFlash_blue.SetActive(false);
         MuzzleFlash_red.SetActive(false);
+
+        health = 5;
+        dead = false;
 
         bullet_pos_L = GameObject.Find("Player/Sprite/Bullet_Spawn_L").transform;
         bullet_pos_R = GameObject.Find("Player/Sprite/Bullet_Spawn_R").transform;
@@ -94,7 +113,9 @@ public class Player : MonoBehaviour
             sprite.transform.eulerAngles = new Vector3(0, 0, -15);
         }
         lastFramePosition = transform.position;
-    
+
+        checkHealth();
+
         shooting();
     }
     
@@ -317,5 +338,75 @@ public class Player : MonoBehaviour
         {
             sprite.transform.Rotate(new Vector3(0, 0, temp_speed/2 * Time.deltaTime));
         }
+    }
+
+    //================================================== Function ==============================================
+
+    //health
+    void checkHealth()
+    {
+        //If player dies
+        if (health <= 0)
+        {
+            health = 0;
+            dead = true;
+            healthBar.transform.GetComponent<Image>().sprite = healthStatus[5];
+            die();
+        }
+
+        if (health == 5)
+        {
+            healthBar.transform.GetComponent<Image>().sprite = healthStatus[0];
+        }
+        if (health == 4)
+        {
+            healthBar.transform.GetComponent<Image>().sprite = healthStatus[1];
+        }
+        if (health == 3)
+        {
+            healthBar.transform.GetComponent<Image>().sprite = healthStatus[2];
+        }
+        if (health == 2)
+        {
+            healthBar.transform.GetComponent<Image>().sprite = healthStatus[3];
+        }
+        if (health == 1)
+        {
+            healthBar.transform.GetComponent<Image>().sprite = healthStatus[4];
+        }
+    }
+
+    bool staydead;
+    void die()
+    {
+        if (dead == true && staydead == false)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            staydead = true;
+            GameOver.GetComponent<GameManager>().summon_GameOver();
+            Destroy(this.gameObject);
+        }
+    }
+
+    //================================================== Collision =============================================
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Enenmy")
+        {
+            health -= 1;
+            Debug.Log("Health: " + health);
+            sr.sprite = sprite_hurt;
+            StartCoroutine("hit");
+        }
+    }
+
+    //================================================= Coroutines =============================================
+
+    IEnumerator hit()
+    {
+        sr.sprite = sprite_hurt;
+        yield return new WaitForSeconds(1f);
+        sr.sprite = sprite_normal;
     }
 }

@@ -67,6 +67,9 @@ public class Enemy : MonoBehaviour
 
         if (collision.transform.tag == "Player")
         {
+            collision.gameObject.GetComponent<Player>().health -= 1;
+            Debug.Log("Health: " + collision.gameObject.GetComponent<Player>().health + "\n" +
+                "This debug is on Enemy.cs");
             death();
         }
     }
