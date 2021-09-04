@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Project
   m_RootView: {fileID: 9}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 200
+  controlID: 205
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2142
+  m_LastSelectedObjectID: -2006
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -702,22 +702,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Entities/Player
+    - Assets/Audio/SFX/Deflect
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets/Entities/Player
+  - Assets/Audio/SFX/Deflect
   m_LastFoldersGridSize: 74
   m_LastProjectPath: C:\Users\deadr\git\GalagaType
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: de440000
-    m_LastClickedID: 17630
-    m_ExpandedIDs: 00000000b8440000ba440000bc440000be440000c0440000c24400001e46000000ca9a3b
+    m_SelectedIDs: c2470000
+    m_LastClickedID: 18370
+    m_ExpandedIDs: 00000000c2440000c4440000c6440000c8440000ca440000da440000de440000b647000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -745,7 +745,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8440000ba440000bc440000be440000c0440000c2440000c4440000
+    m_ExpandedIDs: 00000000c2440000c4440000c6440000c8440000ca440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -870,7 +870,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 40ebffff58ebffff1aecffff28ecffffacf7ffffd0f7ffff3afaffff40fbffff
+      m_ExpandedIDs: 86a8ffff9ea8ffff60a9ffff6ea9ffff40fbffff1a4000008c410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -931,9 +931,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.6398069, y: -1.5243891, z: 114.75705}
+    m_Target: {x: -1.0888954, y: 3.8139138, z: 62.577545}
     speed: 2
-    m_Value: {x: -1.6398069, y: -1.5243891, z: 114.75705}
+    m_Value: {x: -1.0888954, y: 3.8139138, z: 62.577545}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -984,9 +984,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.4504814
+    m_Target: 3.7345216
     speed: 2
-    m_Value: 7.4504814
+    m_Value: 3.7345216
   m_Ortho:
     m_Target: 1
     speed: 2

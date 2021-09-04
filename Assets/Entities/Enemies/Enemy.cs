@@ -40,16 +40,56 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //===================================== Functions ======================================
     void findBoundries()
     {
         width = 1 / (cam.WorldToViewportPoint(new Vector3(1, 1, 0)).x - .5f);
         height = 1 / (cam.WorldToViewportPoint(new Vector3(1, 1, 0)).y - .5f);
     }
 
+    void randomExplosion()
+    {
+        int ranNum = Random.Range(1, 5);
+
+        if (ranNum == 1)
+            FindObjectOfType<AudioManager>().Play("explosion_1");
+        else if (ranNum == 2)
+            FindObjectOfType<AudioManager>().Play("explosion_2");
+        else if (ranNum == 3)
+            FindObjectOfType<AudioManager>().Play("explosion_3");
+        else
+            FindObjectOfType<AudioManager>().Play("explosion_4");
+    }
+
+    public void hitNoise()
+    {
+        int ranNum = Random.Range(1, 4);
+
+        if (ranNum == 1)
+            FindObjectOfType<AudioManager>().Play("hit_1");
+        else if (ranNum == 2)
+            FindObjectOfType<AudioManager>().Play("hit_2");
+        else
+            FindObjectOfType<AudioManager>().Play("hit_3");
+    }
+
+    public void deflectNoise()
+    {
+        int ranNum = Random.Range(1, 4);
+
+        if(ranNum == 1)
+            FindObjectOfType<AudioManager>().Play("deflect_1");
+        if(ranNum == 2)
+            FindObjectOfType<AudioManager>().Play("deflect_2");
+        else
+            FindObjectOfType<AudioManager>().Play("deflect_3");
+    }
+
     void death()
     {
         Instantiate(particle_effect, this.transform.position, Quaternion.identity);
         cam.GetComponent<CameraShake>().shouldShake = true;
+        randomExplosion();
         Destroy(this.gameObject);
     }
 
@@ -58,6 +98,8 @@ public class Enemy : MonoBehaviour
         Instantiate(PE, position, Quaternion.identity);
     }
 
+
+    //===================================== Collisions ======================================
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "GameScreen")
@@ -68,8 +110,6 @@ public class Enemy : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().health -= 1;
-            Debug.Log("Health: " + collision.gameObject.GetComponent<Player>().health + "\n" +
-                "This debug is on Enemy.cs");
             death();
         }
     }

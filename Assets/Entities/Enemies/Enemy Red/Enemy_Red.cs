@@ -22,6 +22,7 @@ public class Enemy_Red : MonoBehaviour
         if (collision.transform.tag == "red_bullet")
         {
             self.impact(self.bulletImpact, collision.transform.position);
+            self.hitNoise();
             Destroy(collision.gameObject);
 
             self.health -= 1;
@@ -31,6 +32,8 @@ public class Enemy_Red : MonoBehaviour
         if (collision.transform.tag == "blue_bullet")
         {
             self.impact(self.sparks, collision.transform.position);
+            self.deflectNoise();
+
             float RanAngle = Random.Range(-45, 46);
             Vector3 newRot2 = new Vector3(0, 0, RanAngle);
             collision.transform.Rotate(newRot2);

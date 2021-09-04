@@ -22,6 +22,7 @@ public class Enemy_Neutral : MonoBehaviour
         if (collision.transform.tag == "red_bullet" || collision.transform.tag == "blue_bullet")
         {
             enemy.impact(enemy.bulletImpact, collision.transform.position);
+            enemy.hitNoise();
             Destroy(collision.gameObject);
 
             enemy.health -= 1;

@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AYS_Restart
+    - AudioManager
     - Boundry
     - BulletImpact
     - Bullet_Behaviour
@@ -211,6 +212,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4434}
     - Class: 114
       Script: {instanceID: 4534}
+    - Class: 114
+      Script: {instanceID: 18434}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -860,8 +863,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 66056c2209ff8e6b238f8b056c7eb331
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_02_04.apk
+  playerPath: C:/Users/deadr/git/GalagaType/TempBuild/GalagaType_v00_03_00.apk

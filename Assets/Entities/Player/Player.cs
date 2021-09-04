@@ -376,6 +376,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    void randomExplosion()
+    {
+        int ranNum = Random.Range(1, 5);
+
+        if (ranNum == 1)
+            FindObjectOfType<AudioManager>().Play("explosion_1");
+        else if (ranNum == 2)
+            FindObjectOfType<AudioManager>().Play("explosion_2");
+        else if (ranNum == 3)
+            FindObjectOfType<AudioManager>().Play("explosion_3");
+        else
+            FindObjectOfType<AudioManager>().Play("explosion_4");
+    }
+
     bool staydead;
     void die()
     {
@@ -384,6 +398,7 @@ public class Player : MonoBehaviour
             Instantiate(explosion, transform.position, Quaternion.identity);
             staydead = true;
             GameOver.GetComponent<GameManager>().summon_GameOver();
+            randomExplosion();
             Destroy(this.gameObject);
         }
     }
